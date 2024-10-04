@@ -1,0 +1,14 @@
+<div class="tabs-wrapper">
+    <div class="tab-names">
+        @for(tab of tabList; track tab) {
+            <div class="tabname" (click)="setActiveTab(tab)" [ngClass]="{'active': tab.activestate}">{{tab.tabname}}</div>
+        }
+    </div>
+    <div class="active-tab-details">
+        @for(tab of tabList; track tab) {
+            @if(currentActiveTab === tab.value && tab.value === "todo"){
+                <app-todo></app-todo>
+            }
+        }
+    </div>
+</div>

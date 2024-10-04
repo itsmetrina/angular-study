@@ -1,0 +1,15 @@
+<div class="todo-wrapper">
+    <div class="user-input-section">
+        <input type="text" name="" id="" placeholder="Add a new task" [(ngModel)]="newTask">
+        <button type="button" (click)="addTask()">Add Task</button>
+    </div>
+    <div class="display-todo-task">
+        @for(task of todoList; track task.id) {
+            <div class="task-wrapper">
+                <span class="dot"></span>
+                <span class="task">{{task.name}}</span>
+                <button type="button" (click)="deleteTask(task.id)">Delete</button>
+            </div>
+        }
+    </div>
+</div>
