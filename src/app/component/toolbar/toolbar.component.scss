@@ -1,0 +1,20 @@
+.toolbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    border-bottom: 2px solid;
+
+    .left-section {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .right-section {
+        a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@for(task of todoList; track task.id) {
+    <div class="task-card">
+        <input type="checkbox" [id]="task.id" [name]="task.id" [value]="task.name">
+        <label [for]="task.id">{{task.name}}</label>
+        <button type="button" (click)="deleteTask(task.id)">Delete</button>
+    </div>
+}

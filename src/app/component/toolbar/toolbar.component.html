@@ -1,0 +1,8 @@
+<div class="toolbar-wrapper">
+    <span class="left-section">{{appName}}</span>
+    <nav class="right-section">
+        @for(item of navigationList; track item) {
+            <a [href]="item.link">{{item.name}}</a>
+        }
+    </nav>
+</div>

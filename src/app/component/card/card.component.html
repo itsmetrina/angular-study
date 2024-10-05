@@ -1,0 +1,8 @@
+<div class="card-wrapper">
+    @for(species of speciesList; track species.speciesId) {
+    <app-plant-card>
+        <p>{{species?.speciesName}}</p>
+        <img [src]="species.speciesImage" [alt]="species.speciesName + 'Image'">
+    </app-plant-card>
+    }
+</div>

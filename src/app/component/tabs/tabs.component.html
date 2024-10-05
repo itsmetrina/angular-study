@@ -1,14 +1,26 @@
 <div class="tabs-wrapper">
     <div class="tab-names">
         @for(tab of tabList; track tab) {
-            <div class="tabname" (click)="setActiveTab(tab)" [ngClass]="{'active': tab.activestate}">{{tab.tabname}}</div>
+        <div class="tabname" (click)="setActiveTab(tab)" [ngClass]="{'active': tab.activestate}">{{tab.tabname}}</div>
         }
     </div>
-    <div class="active-tab-details">
-        @for(tab of tabList; track tab) {
+    <div class="active-tab-details" [ngStyle]="{'background-color': showModal ? 'gray' : 'transparent'}">
+        <!-- @for(tab of tabList; track tab) {
             @if(currentActiveTab === tab.value && tab.value === "todo"){
                 <app-todo></app-todo>
             }
+        } -->
+        @if(currentActiveTab === "todo"){
+        <app-todo></app-todo>
+        } @else if(currentActiveTab === "modal"){
+            <div class="modal-wrapper">
+                <button type="button" (click)="openModal()">Open Modal Component</button>
+            </div>
+        @if(showModal){
+        <app-modal (closeClicked)="closeModal($event)"></app-modal>
+        }
+        } @else if(currentActiveTab === "card") {
+            <app-card></app-card>
         }
     </div>
 </div>

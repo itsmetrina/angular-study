@@ -43,3 +43,6 @@ Thumbs.db
 
 # Task Files
 todo_task
+
+# Config File
+/src/app/myconfig.ts

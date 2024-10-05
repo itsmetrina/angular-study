@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TodoTask } from '../../interfaces/todo';
 import { FormsModule } from '@angular/forms';
+import { TaskCardComponent } from '../task-card/task-card.component';
 
 @Component({
 	selector: 'app-todo',
 	standalone: true,
-	imports: [FormsModule],
+	imports: [FormsModule, TaskCardComponent],
 	templateUrl: './todo.component.html',
 	styleUrl: './todo.component.scss'
 })
