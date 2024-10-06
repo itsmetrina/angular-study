@@ -1,6 +1,6 @@
 @for(task of todoList; track task.id) {
-    <div class="task-card">
-        <input type="checkbox" [id]="task.id" [name]="task.id" [value]="task.name">
+    <div class="task-card" [ngClass]="{'completed': task.iscompleted}">
+        <input type="checkbox" [id]="task.id" [name]="task.id" [value]="task.name" (click)="completeTask(task.id)">
         <label [for]="task.id">{{task.name}}</label>
         <button type="button" (click)="deleteTask(task.id)">Delete</button>
     </div>

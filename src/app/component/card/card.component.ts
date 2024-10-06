@@ -22,12 +22,12 @@ export class CardComponent implements OnInit {
 		this.plantspeciesservice.getSpeciesList().subscribe({
 			next: (species: any) => {
 				if (species?.data?.length > 0) {
-					this.speciesList = species.data.map((speciesItm: {
+					this.speciesList = species.data.filter((speciesItm: { default_image: null; }) => speciesItm?.default_image !== null).map((speciesItm: {
 						watering: null;
 						cycle: null; id: any; common_name: any; default_image: { thumbnail: any; };
 					}) => {
 						return {
-							speciesId: speciesItm?.id ?? null,
+							speciesId: speciesItm?.id ?? "Unknown Species",
 							speciesName: speciesItm?.common_name ?? null,
 							speciesImage: speciesItm?.default_image?.thumbnail ?? null,
 							speciesWateringAmount: speciesItm?.watering ?? null,

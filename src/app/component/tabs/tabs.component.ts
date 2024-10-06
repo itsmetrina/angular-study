@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Tabs } from '../../interfaces/tabs';
@@ -13,7 +13,7 @@ import { CardComponent } from '../card/card.component';
 	templateUrl: './tabs.component.html',
 	styleUrl: './tabs.component.scss'
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent {
 	currentActiveTab: string = 'todo';
 	tabList: Tabs[] = [
 		{ value: 'todo', tabname: "Todo", activestate: true },
@@ -30,7 +30,4 @@ export class TabsComponent implements OnInit {
 	showModal: boolean = false;
 	openModal = () => this.showModal = true;
 	closeModal = (state: boolean) => this.showModal = state;
-	ngOnInit(): void {
-		console.log('Method not implemented.');
-	};
 }

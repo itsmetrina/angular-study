@@ -4,6 +4,6 @@
         <button type="button" (click)="addTask()">Add Task</button>
     </div>
     <div class="display-todo-task">
-        <app-task-card [todoList]="todoList" (deleteTaskEvent)="deleteTask($event)"></app-task-card>
+        <app-task-card [todoList]="todoList" (completeTaskEvent)="completeTask($event)" (deleteTaskEvent)="deleteTask($event)"></app-task-card>
     </div>
 </div>

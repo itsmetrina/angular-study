@@ -1,3 +1,12 @@
 <div class="plant-card-wrapper">
-    <ng-content></ng-content>
+    <ng-content select="[card-title]"></ng-content>
+    <ng-content select="[card-image]"></ng-content>
+    <div>
+        <h5>Watering: </h5>
+        <ng-content select="[card-watering]"></ng-content>
+    </div>
+    <div>
+        <h5>Cycle: </h5>
+        <ng-content select="[card-cycle]"></ng-content>
+    </div>
 </div>
